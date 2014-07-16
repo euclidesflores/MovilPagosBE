@@ -1,0 +1,72 @@
+<!doctype html>
+<!--
+The DOCTYPE declaration above will set the browser's rendering engine into
+"Standards Mode". Replacing this declaration with a "Quirks Mode" doctype may
+lead to some differences in layout.
+-->
+<html>
+    <head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <title>Movil Pagos</title>
+		<link type="text/css" rel="stylesheet" href="com.swordcode.movilpagosbe.MovilPagosBE/reset.css" />
+		<link type="text/css" rel="stylesheet" href="./css/movilpagos.css" />
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/ui-lightness/jquery-ui.css" type="text/css" media="all" />
+		<link rel="icon" type="image/ico" href="favicon.ico"/>
+		<link rel="shortcut icon" href="favicon.ico"/>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		<script type="text/javascript"  src="com.swordcode.movilpagosbe.MovilPagosBE/com.swordcode.movilpagosbe.MovilPagosBE.nocache.js"></script>
+		<script>
+			$(function() {
+				$( "#dialog" ).dialog({
+					autoOpen: false,
+				show: {
+				},
+				hide: {
+				}, open: function(event, ui) {
+					setTimeout(function(){
+					$('#dialog').dialog('close');
+					}, 2500)
+				}
+				});
+			});
+		</script>
+    </head>
+    <body style="overflow:hidden">
+		<div id="head">
+			<div id="headtitle">
+				<strong>MóvilPagos</strong>
+			</div>
+		</div>
+        <iframe src="javascript:''" id="__gwt_historyFrame" style="width:0;height:0;border:0"></iframe>
+		<form id="login" method="post" action="#">
+			<h1>Inicia sesión con tu cuenta de <strong>movilpagos.net</strong></h1>
+			<div>
+				<label for="login_username">Nombre de usuario</label>
+				<input type="text" name="username" id="login_username" class="field required" title="Favor ingresar su nombre de usuario" />
+			</div>
+			<div>
+				<label for="login_password">Contraseña</label>
+				<input type="password" name="password" id="login_password" class="field required" title="Favor ingresar su contraseña" />
+			</div>
+			<p class="forgot"><a href="#" id="forgotpass">¿Olvido su contraseña?</a></p>
+			<div class="submit">
+				<button type="submit">Iniciar sesión</button>
+				<label>
+					<input type="checkbox" name="remember" id="login_remember" value="yes" />Recordarme
+				</label>
+			</div>
+		</form>
+		<div id="dialog" title="Inicio de sesión">
+			<p>Usuario o contraseña incorrecta</p>
+		</div>
+		<div id="ldrpanel" class="hidden">
+			<div class="ldrprogress">
+				<img src="loading.gif" width="31" height="31" />
+				<div style="padding:8px">Iniciando sesión ...</div>
+			</div>
+		</div>
+    </body>
+</html>
+
